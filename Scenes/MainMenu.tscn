@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://cf5rifbex00jj"]
+
+[ext_resource type="FontFile" uid="uid://bd4qwt5ont7uo" path="res://Fonts/Montserrat/Montserrat-Bold.otf" id="1_8saeu"]
+[ext_resource type="Script" uid="uid://bl12py2db7s87" path="res://Scripts/main_menu.gd" id="1_ghw46"]
+[ext_resource type="FontFile" uid="uid://4f1jkv5s6b1l" path="res://Fonts/Montserrat/Montserrat-Light.otf" id="2_ghw46"]
+[ext_resource type="FontFile" uid="uid://bgga0n0uf42ag" path="res://Fonts/Montserrat/Montserrat-Medium.otf" id="3_df05h"]
+
+[node name="MainMenu" type="Node2D" unique_id=1731799054]
+script = ExtResource("1_ghw46")
+
+[node name="MMPos" type="Node2D" parent="." unique_id=624215505]
+
+[node name="Control" type="Control" parent="MMPos" unique_id=1461310944]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="MMPos/Control" unique_id=1820898539]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 60.0
+offset_right = 424.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8saeu")
+theme_override_font_sizes/font_size = 170
+text = "Mini"
+
+[node name="Title2" type="Label" parent="MMPos/Control" unique_id=847476029]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 210.0
+offset_right = 615.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ghw46")
+theme_override_font_sizes/font_size = 170
+text = "Mobile"
+
+[node name="Title3" type="Label" parent="MMPos/Control" unique_id=1836953118]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 360.0
+offset_right = 615.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ghw46")
+theme_override_font_sizes/font_size = 170
+text = "Network"
+
+[node name="Title4" type="Label" parent="MMPos/Control" unique_id=291570587]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 510.0
+offset_right = 615.0
+offset_bottom = 718.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ghw46")
+theme_override_font_sizes/font_size = 170
+text = "Operator"
+
+[node name="Control2" type="Control" parent="MMPos" unique_id=546596395]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1103.0
+offset_top = 740.0
+offset_right = 1143.0
+offset_bottom = 780.0
+
+[node name="Start" type="Button" parent="MMPos/Control2" unique_id=1041790713]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+theme_override_colors/font_hover_color = Color(0.22670749, 0.22670752, 0.22670743, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 100
+text = "Start"
+flat = true
+
+[node name="Tutorial" type="Button" parent="MMPos/Control2" unique_id=630256648]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 253.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+theme_override_colors/font_hover_color = Color(0.22670749, 0.22670752, 0.22670743, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 100
+text = "Disable Tutorial"
+flat = true
+
+[node name="Credits" type="Button" parent="MMPos/Control2" unique_id=342587469]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 253.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+theme_override_colors/font_hover_color = Color(0.22670749, 0.22670752, 0.22670743, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 100
+text = "Credits
+"
+flat = true
+
+[node name="CamStart" type="Node2D" parent="." unique_id=1343797089]
+position = Vector2(-1973.9996, 902.9998)
+rotation = 0.14660765
+scale = Vector2(1.1, 1.1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2108095173]
+anchor_mode = 0
+ignore_rotation = false
+
+[node name="CreditsPos" type="Node2D" parent="." unique_id=382788540]
+position = Vector2(1540.0002, -666)
+rotation = -0.5131268
+scale = Vector2(0.6, 0.6)
+
+[node name="Control" type="Control" parent="CreditsPos" unique_id=392779781]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credit1" type="Label" parent="CreditsPos/Control" unique_id=288990999]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 54.0
+offset_right = 434.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8saeu")
+theme_override_font_sizes/font_size = 130
+text = "A game by Hendrik Wilka"
+
+[node name="Credit2" type="Label" parent="CreditsPos/Control" unique_id=2142112436]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 209.0
+offset_right = 1583.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 110
+text = "made in under 48 hours for"
+
+[node name="Credit3" type="Label" parent="CreditsPos/Control" unique_id=1467559336]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 319.0
+offset_right = 1583.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 110
+text = "Ludum Dare 59"
+
+[node name="Credit4" type="Label" parent="CreditsPos/Control" unique_id=843496395]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 636.0
+offset_right = 1583.0
+offset_bottom = 844.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 50
+text = "Font"
+
+[node name="Credit7" type="Label" parent="CreditsPos/Control" unique_id=1756576197]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 636.0
+offset_right = 1710.0
+offset_bottom = 844.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8saeu")
+theme_override_font_sizes/font_size = 50
+text = "Montserrat"
+
+[node name="Credit5" type="Label" parent="CreditsPos/Control" unique_id=493159324]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 706.0
+offset_right = 1754.0
+offset_bottom = 914.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 50
+text = "Julieta Ulanovsky, Jacques Le Bailly, Juan Pablo del Peral, Sol Matas"
+
+[node name="Credit6" type="Label" parent="CreditsPos/Control" unique_id=2125787896]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 636.0
+offset_right = 2012.0
+offset_bottom = 844.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 50
+text = "by"
+
+[node name="Credit8" type="Label" parent="CreditsPos/Control" unique_id=1759949597]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 800.0
+offset_right = 1583.0
+offset_bottom = 1008.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 50
+text = "Proudly uses the "
+
+[node name="Credit9" type="Label" parent="CreditsPos/Control" unique_id=1874203924]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 800.0
+offset_right = 2022.0
+offset_bottom = 1008.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8saeu")
+theme_override_font_sizes/font_size = 50
+text = "Godot Game Engine"
+
+[node name="Back" type="Button" parent="CreditsPos/Control" unique_id=397666734]
+layout_mode = 0
+offset_left = 1548.0
+offset_top = 953.0
+offset_right = 1809.0
+offset_bottom = 1084.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+theme_override_colors/font_hover_color = Color(0.22670749, 0.22670752, 0.22670743, 1)
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 100
+text = "Back
+"
+flat = true
+
+[connection signal="pressed" from="MMPos/Control2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MMPos/Control2/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MMPos/Control2/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CreditsPos/Control/Back" to="." method="_on_back_pressed"]

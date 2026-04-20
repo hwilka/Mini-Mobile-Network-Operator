@@ -1,0 +1,779 @@
+[gd_scene format=3 uid="uid://bd5hj1v2uof3r"]
+
+[ext_resource type="Script" uid="uid://de06k2kcbfub7" path="res://Scripts/map.gd" id="1_qumfl"]
+[ext_resource type="PackedScene" uid="uid://drf1blwtix6tr" path="res://Scenes/UI/ButtonPause.tscn" id="1_s486e"]
+[ext_resource type="PackedScene" uid="uid://boroism1ekh6j" path="res://Scenes/UI/ButtonPlay.tscn" id="2_etk83"]
+[ext_resource type="PackedScene" uid="uid://3eef8grvm6o" path="res://Scenes/UI/ButtonPlay2.tscn" id="3_qumfl"]
+[ext_resource type="TileSet" uid="uid://yh7chosav43x" path="res://Tilemaps/tiles_street.tres" id="5_r08cw"]
+[ext_resource type="PackedScene" uid="uid://ckwj73osm5t3c" path="res://Scenes/UI/Clock.tscn" id="6_5t7yc"]
+[ext_resource type="FontFile" uid="uid://bgga0n0uf42ag" path="res://Fonts/Montserrat/Montserrat-Medium.otf" id="6_00287"]
+[ext_resource type="Texture2D" uid="uid://r2d00vp2d0qb" path="res://img/PopNeutral.png" id="7_b7adt"]
+[ext_resource type="Texture2D" uid="uid://7qmb841al4ph" path="res://img/PopGreen.png" id="9_46meq"]
+[ext_resource type="Texture2D" uid="uid://b1sof4517pvj1" path="res://img/PopYellow.png" id="10_6bwvt"]
+[ext_resource type="Texture2D" uid="uid://dla8hev6rvhk7" path="res://img/PopRed.png" id="11_q4yjo"]
+[ext_resource type="FontFile" uid="uid://bd4qwt5ont7uo" path="res://Fonts/Montserrat/Montserrat-Bold.otf" id="12_jdjsr"]
+[ext_resource type="PackedScene" uid="uid://bvkx62msrsyij" path="res://Scenes/UI/Card.tscn" id="13_46meq"]
+[ext_resource type="PackedScene" uid="uid://c6pu8xvy2r2md" path="res://Scenes/CellTower.tscn" id="14_6bwvt"]
+[ext_resource type="PackedScene" uid="uid://bjykkv7bq5i55" path="res://Scenes/UI/ButtonQuit.tscn" id="14_q4yjo"]
+
+[node name="Map" type="Node2D" unique_id=1636662877]
+script = ExtResource("1_qumfl")
+
+[node name="Cam" type="Camera2D" parent="." unique_id=664466868]
+ignore_rotation = false
+
+[node name="ParcTiles" type="TileMapLayer" parent="." unique_id=890739575]
+tile_set = ExtResource("5_r08cw")
+rendering_quadrant_size = 25
+
+[node name="WaterTiles" type="TileMapLayer" parent="." unique_id=1297620591]
+tile_set = ExtResource("5_r08cw")
+rendering_quadrant_size = 25
+
+[node name="StreetTiles" type="TileMapLayer" parent="." unique_id=928905905]
+tile_set = ExtResource("5_r08cw")
+rendering_quadrant_size = 25
+
+[node name="Houses" type="Node2D" parent="." unique_id=1141298474]
+
+[node name="Pops" type="Node2D" parent="." unique_id=1476331915]
+
+[node name="CellTowers" type="Node2D" parent="." unique_id=2095565660]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1428374383]
+
+[node name="TimeControl" type="Control" parent="UI" unique_id=939008202]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 40.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="ButtonPause" parent="UI/TimeControl" unique_id=1043095793 instance=ExtResource("1_s486e")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -620.0
+offset_right = -420.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="ButtonPlay" parent="UI/TimeControl" unique_id=286659783 instance=ExtResource("2_etk83")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -410.0
+offset_right = -210.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="ButtonPlay2" parent="UI/TimeControl" unique_id=49454404 instance=ExtResource("3_qumfl")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_right = 0.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 1
+size_flags_horizontal = 8
+
+[node name="Clock" parent="UI/TimeControl" unique_id=383861632 instance=ExtResource("6_5t7yc")]
+position = Vector2(-724, 96)
+
+[node name="PopOverview" type="Control" parent="UI" unique_id=1660566341]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.999999
+offset_top = 9.999999
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.7, 0.7)
+
+[node name="PTotal" type="Sprite2D" parent="UI/PopOverview" unique_id=549235796]
+position = Vector2(50, 50)
+texture = ExtResource("7_b7adt")
+
+[node name="PTotalLabel" type="Label" parent="UI/PopOverview/PTotal" unique_id=1335658369]
+offset_left = 67.14286
+offset_top = -37.142853
+offset_right = 128.57143
+offset_bottom = 37.857147
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 60
+text = "17"
+
+[node name="PGreen" type="Sprite2D" parent="UI/PopOverview" unique_id=1524371922]
+position = Vector2(50, 160)
+texture = ExtResource("9_46meq")
+
+[node name="PGreenLabel" type="Label" parent="UI/PopOverview/PGreen" unique_id=417221330]
+offset_left = 67.14286
+offset_top = -37.142853
+offset_right = 128.57143
+offset_bottom = 37.857147
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 60
+text = "17"
+
+[node name="PYellow" type="Sprite2D" parent="UI/PopOverview" unique_id=851867639]
+position = Vector2(50, 270)
+texture = ExtResource("10_6bwvt")
+
+[node name="PYellowLabel" type="Label" parent="UI/PopOverview/PYellow" unique_id=986185595]
+offset_left = 67.14286
+offset_top = -37.142853
+offset_right = 128.57143
+offset_bottom = 37.857147
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 60
+text = "17"
+
+[node name="PRed" type="Sprite2D" parent="UI/PopOverview" unique_id=1704891459]
+position = Vector2(50, 380)
+texture = ExtResource("11_q4yjo")
+
+[node name="PRedLabel" type="Label" parent="UI/PopOverview/PRed" unique_id=542397313]
+offset_left = 67.14286
+offset_top = -37.142853
+offset_right = 128.57143
+offset_bottom = 37.857147
+theme_override_fonts/font = ExtResource("12_jdjsr")
+theme_override_font_sizes/font_size = 60
+text = "17 / 5"
+
+[node name="Cards" type="Control" parent="UI" unique_id=519957914]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CardsTop" type="Control" parent="UI/Cards" unique_id=589123013]
+anchors_preset = 0
+offset_left = -350.0
+offset_top = -194.0
+offset_right = -310.0
+offset_bottom = -154.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Card1" type="Control" parent="UI/Cards/CardsTop" unique_id=1198324173]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Card" parent="UI/Cards/CardsTop/Card1" unique_id=1041569039 instance=ExtResource("13_46meq")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 0.0
+offset_right = -20.0
+offset_bottom = 0.0
+grow_horizontal = 2
+_symbol_type = 0
+_title = "Build on House"
+_count = 1
+
+[node name="Card2" type="Control" parent="UI/Cards/CardsTop" unique_id=1510076404]
+anchors_preset = 0
+offset_left = 339.99994
+offset_right = 379.99994
+offset_bottom = 40.0
+
+[node name="Card" parent="UI/Cards/CardsTop/Card2" unique_id=1454696567 instance=ExtResource("13_46meq")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 0.0
+offset_right = -20.0
+offset_bottom = 0.0
+grow_horizontal = 2
+_title = "Build on Ground"
+_count = 1
+
+[node name="Card3" type="Control" parent="UI/Cards/CardsTop" unique_id=286974121]
+anchors_preset = 0
+offset_left = 680.0
+offset_right = 720.0
+offset_bottom = 40.0
+
+[node name="Card" parent="UI/Cards/CardsTop/Card3" unique_id=20001081 instance=ExtResource("13_46meq")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 0.0
+offset_right = -20.0
+offset_bottom = 0.0
+grow_horizontal = 2
+_symbol_type = 2
+_title = "Upgrade Distance"
+_count = 1
+
+[node name="Card4" type="Control" parent="UI/Cards/CardsTop" unique_id=400291883]
+anchors_preset = 0
+offset_left = 1020.0
+offset_right = 1060.0
+offset_bottom = 40.0
+
+[node name="Card" parent="UI/Cards/CardsTop/Card4" unique_id=324343926 instance=ExtResource("13_46meq")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 0.0
+offset_right = -20.0
+offset_bottom = 0.0
+grow_horizontal = 2
+_symbol_type = 3
+_title = "Upgrade Capacity"
+_count = 0
+
+[node name="Quit" type="Control" parent="UI" unique_id=584835972]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="ButtonQuit" parent="UI/Quit" unique_id=1501760847 instance=ExtResource("14_q4yjo")]
+layout_mode = 1
+offset_left = 18.0
+offset_top = -95.0
+offset_right = 213.84
+offset_bottom = 97.6
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.6, 0.6)
+
+[node name="ButtonQuitAccept" type="Button" parent="UI/Quit" unique_id=747356710]
+layout_mode = 0
+offset_left = -185.0
+offset_top = -81.0
+offset_right = 8.0
+offset_bottom = 3.0
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 55
+text = "Quit?"
+flat = true
+
+[node name="DeathScreen" type="Control" parent="UI" unique_id=404199751]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="UI/DeathScreen" unique_id=15202114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Pop" type="Label" parent="UI/DeathScreen" unique_id=617503254]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 650.0
+offset_right = 1069.0
+offset_bottom = 725.0
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 60
+text = "Final Population:"
+
+[node name="PopCount" type="Label" parent="UI/DeathScreen" unique_id=795980277]
+layout_mode = 0
+offset_left = 1089.0
+offset_top = 650.0
+offset_right = 1602.0
+offset_bottom = 727.0
+theme_override_fonts/font = ExtResource("12_jdjsr")
+theme_override_font_sizes/font_size = 62
+text = "0"
+
+[node name="Text1" type="Label" parent="UI/DeathScreen" unique_id=1425442149]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 377.0
+offset_right = 1499.0
+offset_bottom = 452.0
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 60
+text = "Customer satisfaction reaches a low"
+
+[node name="PlayAgain" type="Button" parent="UI/DeathScreen" unique_id=1830099801]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 921.0
+offset_right = 1304.0
+offset_bottom = 989.0
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 48
+text = "Play again"
+flat = true
+
+[node name="MainMenu" type="Button" parent="UI/DeathScreen" unique_id=132294223]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 921.0
+offset_right = 887.0
+offset_bottom = 989.0
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 48
+text = "Main menu"
+flat = true
+
+[node name="RewardScreen" type="Control" parent="UI" unique_id=1684681695]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="UI/RewardScreen" unique_id=1475677753]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="RewardText" type="Label" parent="UI/RewardScreen" unique_id=1559346362]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 238.0
+offset_right = 1258.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.2147026, 0.21470255, 0.21470255, 1)
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 72
+text = "Choose a reward"
+
+[node name="Card1" parent="UI/RewardScreen" unique_id=1904159294 instance=ExtResource("13_46meq")]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 354.0
+offset_right = 650.0
+offset_bottom = 354.0
+_title = ""
+
+[node name="Card2" parent="UI/RewardScreen" unique_id=189294924 instance=ExtResource("13_46meq")]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 354.0
+offset_right = 1000.0
+offset_bottom = 354.0
+_title = ""
+
+[node name="Cover" type="ColorRect" parent="UI" unique_id=824279823]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.7176471, 0.7176471, 1)
+
+[node name="Tutorial" type="Control" parent="UI" unique_id=678200827]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Step1" type="Control" parent="UI/Tutorial" unique_id=1843430724]
+visible = false
+anchors_preset = 0
+offset_left = 1092.0
+offset_top = 600.0
+offset_right = 1132.0
+offset_bottom = 640.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="UI/Tutorial/Step1" unique_id=598458254]
+layout_mode = 0
+offset_right = 676.0
+offset_bottom = 45.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "This green circle is a happy customer"
+
+[node name="Label2" type="Label" parent="UI/Tutorial/Step1" unique_id=176245828]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 676.0
+offset_bottom = 95.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Lets have a look at his neighbourhood!"
+
+[node name="Label3" type="Label" parent="UI/Tutorial/Step1" unique_id=389292982]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 822.0
+offset_bottom = 145.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Drag the screen with the right mouse button"
+
+[node name="Label4" type="Label" parent="UI/Tutorial/Step1" unique_id=241456149]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 822.0
+offset_bottom = 195.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Zoom with the mouse wheel"
+
+[node name="Step2" type="Control" parent="UI/Tutorial" unique_id=1441109251]
+visible = false
+anchors_preset = 0
+offset_left = 1092.0
+offset_top = 131.0
+offset_right = 1132.0
+offset_bottom = 171.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="UI/Tutorial/Step2" unique_id=99628265]
+layout_mode = 0
+offset_left = 146.0
+offset_right = 822.0
+offset_bottom = 45.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Currently the time is paused"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="UI/Tutorial/Step2" unique_id=1431405162]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 50.0
+offset_right = 822.0
+offset_bottom = 95.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Click on the play button to watch the"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="UI/Tutorial/Step2" unique_id=366487211]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 822.0
+offset_bottom = 145.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "customer come to life!"
+horizontal_alignment = 2
+
+[node name="Step4" type="Control" parent="UI/Tutorial" unique_id=1121554133]
+visible = false
+anchors_preset = 0
+offset_left = 238.0
+offset_top = 210.0
+offset_right = 1424.0
+offset_bottom = 378.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="UI/Tutorial/Step4" unique_id=432652410]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -146.0
+offset_right = 1059.0
+offset_bottom = -101.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Our customer wants to connect his phone to the network"
+
+[node name="Label2" type="Label" parent="UI/Tutorial/Step4" unique_id=2044075808]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -96.0
+offset_right = 1085.0
+offset_bottom = -51.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "If he can't find a signal within 5 seconds, he will turn yellow"
+
+[node name="Label3" type="Label" parent="UI/Tutorial/Step4" unique_id=1747165522]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -46.0
+offset_right = 1052.0
+offset_bottom = -1.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "And yellow customers who can't get a signal will turn red"
+
+[node name="Label4" type="Label" parent="UI/Tutorial/Step4" unique_id=194751728]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 906.0
+offset_bottom = 49.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "When there are 5 red custumers, we have to stop"
+
+[node name="Step5" type="Control" parent="UI/Tutorial" unique_id=1227279377]
+visible = false
+anchors_preset = 0
+offset_left = 326.0
+offset_top = 631.0
+offset_right = 1571.0
+offset_bottom = 819.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="UI/Tutorial/Step5" unique_id=196440886]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -50.0
+offset_right = 1300.0
+offset_bottom = -5.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "We must build a new cell tower."
+horizontal_alignment = 1
+
+[node name="Label1" type="Label" parent="UI/Tutorial/Step5" unique_id=327914627]
+layout_mode = 0
+offset_left = -10.0
+offset_right = 1300.0
+offset_bottom = 45.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "For that we use the cards on the bottom"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/Tutorial/Step5" unique_id=1624555805]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 676.0
+offset_bottom = 95.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "We can build them on houses (left card) or on the ground (second card)"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/Tutorial/Step5" unique_id=1204995191]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1305.0
+offset_bottom = 145.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "The number of available actions is displayed on the top"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="UI/Tutorial/Step5" unique_id=1381244739]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 1308.0
+offset_bottom = 195.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Build a cell tower, so that the customer gets a signal"
+horizontal_alignment = 1
+
+[node name="Step6" type="Control" parent="UI/Tutorial" unique_id=928555263]
+visible = false
+anchors_preset = 0
+offset_left = 410.0
+offset_top = 262.0
+offset_right = 1453.0
+offset_bottom = 675.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="UI/Tutorial/Step6" unique_id=72231364]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -146.0
+offset_right = 1059.0
+offset_bottom = -101.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Cell towers have a range: Customers in it can connect to it."
+
+[node name="Label1" type="Label" parent="UI/Tutorial/Step6" unique_id=411821480]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -96.0
+offset_right = 1072.0
+offset_bottom = -51.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "You can hover it to see its range"
+
+[node name="Label2" type="Label" parent="UI/Tutorial/Step6" unique_id=626892428]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -46.0
+offset_right = 1366.0
+offset_bottom = -1.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "If multiple customers are connected, it takes time to handle their requests"
+
+[node name="Label3" type="Label" parent="UI/Tutorial/Step6" unique_id=2116701039]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 1052.0
+offset_bottom = 49.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Cell towers with a higher capacity handle requests faster."
+
+[node name="Label4" type="Label" parent="UI/Tutorial/Step6" unique_id=1379019030]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 425.0
+offset_right = 908.0
+offset_bottom = 470.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "You can use the right cards to increase range (up to level 3)"
+
+[node name="Label5" type="Label" parent="UI/Tutorial/Step6" unique_id=1992052201]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 475.0
+offset_right = 908.0
+offset_bottom = 520.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "or capacity (up to level 3) of cell towers"
+
+[node name="Step7" type="Control" parent="UI/Tutorial" unique_id=1163864203]
+visible = false
+anchors_preset = 0
+offset_left = 601.0
+offset_top = 617.0
+offset_right = 1846.0
+offset_bottom = 805.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="UI/Tutorial/Step7" unique_id=1830883554]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -50.0
+offset_right = 1300.0
+offset_bottom = -5.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Over time the city will grow and new customers arrive"
+horizontal_alignment = 2
+
+[node name="Label1" type="Label" parent="UI/Tutorial/Step7" unique_id=1175390018]
+layout_mode = 0
+offset_left = -10.0
+offset_right = 1300.0
+offset_bottom = 45.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Satisfy them all"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="UI/Tutorial/Step7" unique_id=1726582146]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 1300.0
+offset_bottom = 95.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "You will receive new cards at the end of every day"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="UI/Tutorial/Step7" unique_id=1925872633]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 1308.0
+offset_bottom = 195.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_00287")
+theme_override_font_sizes/font_size = 36
+text = "Good luck and have fun!"
+horizontal_alignment = 2
+
+[node name="ParticlesWorld" type="Node2D" parent="." unique_id=374964909]
+
+[node name="Particles" type="Node2D" parent="." unique_id=924293332]
+
+[node name="MousePositionWorld" type="Node2D" parent="." unique_id=446960526]
+
+[node name="CellTowerPlacement" parent="." unique_id=2109158644 instance=ExtResource("14_6bwvt")]
+visible = false
+modulate = Color(1, 1, 1, 0.63529414)
+
+[connection signal="pressed" from="UI/TimeControl/ButtonPause" to="." method="_on_button_pause_pressed"]
+[connection signal="pressed" from="UI/TimeControl/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="UI/TimeControl/ButtonPlay2" to="." method="_on_button_play_2_pressed"]
+[connection signal="pressed" from="UI/Cards/CardsTop/Card1/Card" to="." method="_on_card_build_on_house_pressed"]
+[connection signal="pressed" from="UI/Cards/CardsTop/Card2/Card" to="." method="_on_card_build_on_ground_pressed"]
+[connection signal="pressed" from="UI/Cards/CardsTop/Card3/Card" to="." method="_on_card_upgrade_distance_pressed"]
+[connection signal="pressed" from="UI/Cards/CardsTop/Card4/Card" to="." method="_on_card_upgrade_capacity_pressed"]
+[connection signal="pressed" from="UI/Quit/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="UI/Quit/ButtonQuitAccept" to="." method="_on_button_quit_accept_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="UI/RewardScreen/Card1" to="." method="_on_card_reward_1_pressed"]
+[connection signal="pressed" from="UI/RewardScreen/Card2" to="." method="_on_card_reward_2_pressed"]

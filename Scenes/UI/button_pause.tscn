@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dlre6y4nik4bl"]
+
+[ext_resource type="Texture2D" uid="uid://bjma2jhb7deei" path="res://img/UI/ButtonBase.png" id="1_wbyuf"]
+[ext_resource type="Texture2D" uid="uid://cgypihamtxpv6" path="res://img/UI/ButtonPressedBase.png" id="2_rjr5y"]
+[ext_resource type="Texture2D" uid="uid://cvu6pkspod8rg" path="res://img/UI/ButtonHoverBase.png" id="3_ox1m0"]
+
+[node name="ButtonPause" type="TextureButton" unique_id=426129947]
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 0.185
+offset_right = 0.31999207
+offset_bottom = 0.19999695
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_wbyuf")
+texture_pressed = ExtResource("2_rjr5y")
+texture_hover = ExtResource("3_ox1m0")

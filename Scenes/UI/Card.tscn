@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bvkx62msrsyij"]
+
+[ext_resource type="Script" uid="uid://cj3jml0bck1f6" path="res://Scripts/card.gd" id="1_n20b8"]
+[ext_resource type="Texture2D" uid="uid://c57sakm1c4r4g" path="res://img/UI/Card/CardBase.png" id="2_ghuro"]
+[ext_resource type="Texture2D" uid="uid://d4dqcuy1x2pom" path="res://img/UI/Card/CardDrag.png" id="3_c8xoj"]
+[ext_resource type="Texture2D" uid="uid://dcsksi7qc2qvn" path="res://img/UI/Card/CardHover.png" id="4_wtxqf"]
+[ext_resource type="Texture2D" uid="uid://211ma7j5bim6" path="res://img/UI/Card/CellWiden.png" id="5_ghuro"]
+[ext_resource type="FontFile" uid="uid://bd4qwt5ont7uo" path="res://Fonts/Montserrat/Montserrat-Bold.otf" id="6_c8xoj"]
+
+[node name="Card" type="Control" unique_id=1041569039]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_bottom = -1.0
+script = ExtResource("1_n20b8")
+_symbol_type = 1
+_count = 7
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=980895890]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_ghuro")
+texture_pressed = ExtResource("3_c8xoj")
+texture_hover = ExtResource("4_wtxqf")
+
+[node name="Symbol" type="Sprite2D" parent="." unique_id=1531803160]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(138, 185)
+texture = ExtResource("5_ghuro")
+
+[node name="CountText" type="Label" parent="." unique_id=18238297]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 1.0
+offset_right = 57.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("6_c8xoj")
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Title" type="Label" parent="." unique_id=76915285]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 314.0
+offset_right = 268.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("6_c8xoj")
+theme_override_font_sizes/font_size = 26
+text = "Build on House"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

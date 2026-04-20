@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dkmrfcc8vxdk2"]
+
+[ext_resource type="Texture2D" uid="uid://cygeqvf2uurfs" path="res://img/signal.png" id="1_4vqmj"]
+[ext_resource type="Script" uid="uid://bk302pc6ih1ea" path="res://Scripts/signal_particle.gd" id="2_r84bb"]
+
+[node name="SignalParticle" type="Sprite2D" unique_id=2090109015]
+texture = ExtResource("1_4vqmj")
+script = ExtResource("2_r84bb")

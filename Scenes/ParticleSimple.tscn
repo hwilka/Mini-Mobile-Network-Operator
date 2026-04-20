@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://of0ayu7ahni3"]
+
+[ext_resource type="Texture2D" uid="uid://c507u727ejnco" path="res://img/particle_black.png" id="1_1kb1l"]
+[ext_resource type="Script" uid="uid://bgwg4562yn4n3" path="res://Scripts/particle_simple.gd" id="2_p2egp"]
+
+[node name="ParticleSimple" type="Sprite2D" unique_id=200863568]
+texture = ExtResource("1_1kb1l")
+script = ExtResource("2_p2egp")

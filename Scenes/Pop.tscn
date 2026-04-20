@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ck4te4rafguhm"]
+
+[ext_resource type="Script" uid="uid://y2v5d28tvbr6" path="res://Scripts/pop.gd" id="1_a4sa8"]
+[ext_resource type="Texture2D" uid="uid://7qmb841al4ph" path="res://img/PopGreen.png" id="2_u55sq"]
+[ext_resource type="Texture2D" uid="uid://b4nnlkoqqesqc" path="res://img/Marker.png" id="3_u55sq"]
+
+[node name="Pop" type="Node2D" unique_id=1140935790]
+script = ExtResource("1_a4sa8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808677488]
+position = Vector2(20, 20)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_u55sq")
+centered = false
+
+[node name="Marker" type="Sprite2D" parent="." unique_id=1301894882]
+visible = false
+position = Vector2(76, -24)
+texture = ExtResource("3_u55sq")

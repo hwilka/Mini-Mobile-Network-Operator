@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ckwj73osm5t3c"]
+
+[ext_resource type="Script" uid="uid://nbnf4mgvo353" path="res://Scripts/clock.gd" id="1_0d3qq"]
+[ext_resource type="Texture2D" uid="uid://cloi0l5x8mekc" path="res://img/UI/ClockBG.png" id="2_8ol2h"]
+[ext_resource type="Texture2D" uid="uid://4dv135e2003o" path="res://img/UI/ClockArm.png" id="3_kb4kt"]
+
+[node name="Clock" type="Node2D" unique_id=383861632]
+script = ExtResource("1_0d3qq")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1595652476]
+texture = ExtResource("2_8ol2h")
+
+[node name="Arm" type="Sprite2D" parent="." unique_id=1296022277]
+texture = ExtResource("3_kb4kt")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjykkv7bq5i55"]
+
+[ext_resource type="Texture2D" uid="uid://lxgmv7wlxvvg" path="res://img/UI/ButtonQuit.png" id="1_3bbhj"]
+[ext_resource type="Texture2D" uid="uid://bmddi6k6vmcln" path="res://img/UI/ButtonQuitPressed.png" id="2_tg7sg"]
+[ext_resource type="Texture2D" uid="uid://dpio2bjr0018i" path="res://img/UI/ButtonQuitHover.png" id="3_rub7k"]
+
+[node name="ButtonQuit" type="TextureButton" unique_id=1501760847]
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 0.185
+offset_right = 0.31999207
+offset_bottom = 0.19999695
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_3bbhj")
+texture_pressed = ExtResource("2_tg7sg")
+texture_hover = ExtResource("3_rub7k")
+texture_disabled = ExtResource("1_3bbhj")

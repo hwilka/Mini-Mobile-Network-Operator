@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://boroism1ekh6j"]
+
+[ext_resource type="Texture2D" uid="uid://rc2kpm2hxy7c" path="res://img/UI/ButtonPlay.png" id="1_ueyo0"]
+[ext_resource type="Texture2D" uid="uid://dqg8yy6st0h1o" path="res://img/UI/ButtonPlayPressedHover.png" id="2_ei1hg"]
+[ext_resource type="Texture2D" uid="uid://dnot5m80ggsh" path="res://img/UI/ButtonPlayHover.png" id="3_efjwm"]
+[ext_resource type="Texture2D" uid="uid://8m6vbag76h5s" path="res://img/UI/ButtonPlayPressed.png" id="4_slrnm"]
+
+[node name="ButtonPlay" type="TextureButton" unique_id=1501760847]
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 0.185
+offset_right = 0.31999207
+offset_bottom = 0.19999695
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_ueyo0")
+texture_pressed = ExtResource("2_ei1hg")
+texture_hover = ExtResource("3_efjwm")
+texture_disabled = ExtResource("4_slrnm")
